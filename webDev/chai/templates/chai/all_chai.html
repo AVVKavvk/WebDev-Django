@@ -1,13 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Chai</title>
-</head>
-<body>
-  <h1>
-    All available chais
-  </h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+All Chai
+{% endblock %}
+
+{% block content %}
+
+<h1>All available chai</h1>
+
+<div class=" mx-auto justify-center flex  gap-6 ">
+
+  {% for chai in chais %}
+
+<div class="flex w-[250px] items-center justify-center bg-slate-500 flex-col gap-2 p-2 rounded shadow ">
+  
+  <img src="{{chai.image.url}}" width="200px" alt="">
+  <h1>Name: {{chai.name }}</h1>
+  <a href="{% url 'chai_detail' chai.id %}" class="bg-orange-600 hover:bg-orange-700 p-1 rounded transition-all duration-500">Detail</a>
+</div>
+
+{% endfor %}
+</div>
+{% endblock %}

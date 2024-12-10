@@ -1,8 +1,18 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Home
+Chai Detail
 {% endblock %}
+
 {% block content %}
-<h1 class="bg-blue-400 text-3xl">Home Page Web Dev</h1>
+
+<div>
+  <h1>
+    {{chai.id}}
+  </h1>
+  <h2>
+    {{chai.name}}
+  </h2>
+</div>
+
 {% endblock %}
